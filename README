@@ -11,7 +11,7 @@ The mymain0 programs are mainly based on those examples, and adapted for the stu
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-The python folder includes the codes and data used for the data plotting. More precisely:
+The python folder includes the codes and data (the .zip files first need to be extracted) used for the data plotting. More precisely:
 
 -prog_theo-q134.py is used for the theta dependancy
 -prog_q2.py is used for the cross section studies

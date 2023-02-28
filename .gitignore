@@ -12,4 +12,5 @@
 .php_cs.cache   <-- PHPCS cache file
 
 .vscode
-/python/*.txt
+/python/jet_qqbar*.txt
+.log
