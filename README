@@ -7,7 +7,7 @@ main05 and main06 programs from the Pythia8 examples.
 The mymain0 programs are mainly based on those examples, and adapted for the study of the reaction ee->qqbar. More precisely:
 
 -mymain012.cc is used for the first and second questions
--mymain03456.cc is used for the questions 3 to 6
+-mymain0345618.cc is used for the questions 3 to 8
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -25,6 +25,7 @@ The data files are named following the set simulations parameters:
 -jets (with SlowJet) or nojet
 -part/had, to specify if partonic/hadronic evolutions were activated
 -cs, to specify this was for the cross section studies
+-thrust, to specify the thrust studies
 -qqbar/mumu, to specify if the reactions studies were either ee->qqbar or ee->mumu
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------

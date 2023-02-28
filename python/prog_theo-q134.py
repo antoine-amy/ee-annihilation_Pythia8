@@ -31,7 +31,7 @@ plt.figure()
 # Plot histograms
 n1, bins1, patches1 = plt.hist(lst1, bins=41, histtype='step', linewidth=1.2, color='blue', alpha=0.5, density=True, label='No partonic nor hadronic evolutions')
 #n3, bins3, patches3 = plt.hist(lst3, bins=41, histtype='step', linewidth=1.2, color='orange', density=True, label='No partonic, but hadronic evolutions')
-n4, bins4, patches4 = plt.hist(lst4, bins=41, histtype='step', linewidth=1.2, color='red', alpha=0.5, density=True, label='Partonic and hadronic evolutions')
+#n4, bins4, patches4 = plt.hist(lst4, bins=41, histtype='step', linewidth=1.2, color='red', alpha=0.5, density=True, label='Partonic and hadronic evolutions')
 
 '''
 # Compute mean and standard deviation
@@ -53,19 +53,40 @@ bin_heights, _ = np.histogram(theta_values, bins=bins, weights=sigma_values)
 plt.hist(theta_values, bins=bins, weights=sigma_values, histtype='step', linewidth=1.2, color='black', density=True, label='First order theoretical evolution')
 
 plt.xlabel('θ (rad)')
-plt.ylabel('dσ/dcos(θ)')
+plt.ylabel('dσ/dθ')
 plt.legend(loc='lower center')
 
 
+
+plt.figure()
+n1, bins1, patches1 = plt.hist(lst1, bins=41, histtype='step', linewidth=1.2, color='blue', alpha=0.75, density=False, label='No partonic nor hadronic evolutions')
+n3, bins3, patches3 = plt.hist(lst3, bins=41, histtype='step', linewidth=1.2, color='orange', alpha=0.75, density=False, label='Partonic, no hadronic evolutions')
+n_diff = n3 - n1
+plt.hist(bins3[:-1], bins3, weights=n_diff, histtype='step', linewidth=1.2, color='grey', density=False, label='Difference (partonic-no partonic evolutions)')
+plt.xlabel('θ (rad)')
+plt.ylabel('dσ/dθ')
+plt.legend(loc='center')
 
 # Compute the difference between n3 and n4 histograms
 
 plt.figure()
-n3, bins3, patches3 = plt.hist(lst3, bins=41, histtype='step', linewidth=1.2, color='orange', alpha=0.75, density=False, label='No partonic, but hadronic evolutions')
+n3, bins3, patches3 = plt.hist(lst3, bins=41, histtype='step', linewidth=1.2, color='orange', alpha=0.75, density=False, label='Partonic, no hadronic evolutions')
 n4, bins4, patches4 = plt.hist(lst4, bins=41, histtype='step', linewidth=1.2, color='red', alpha=0.75, density=False, label='Partonic and hadronic evolutions')
-n_diff = abs(n3 - n4)
-plt.hist(bins3[:-1], bins3, weights=n_diff, histtype='step', linewidth=1.2, color='black', density=False, label='Difference (No partonic - Partonic and hadronic)')
+n_diff = n4 - n3
+plt.hist(bins3[:-1], bins3, weights=n_diff, histtype='step', linewidth=1.2, color='grey', density=False, label='Difference (hadronic-no hadronic evolutions)')
 plt.xlabel('θ (rad)')
-plt.ylabel('dσ/dcos(θ)')
+plt.ylabel('dσ/dθ')
+plt.legend(loc='center')
+
+plt.figure()
+
+#n1, bins1, patches1 = plt.hist(lst1, bins=41, histtype='step', linewidth=1.2, color='blue', alpha=0.5, density=True, label='No partonic nor hadronic evolutions')
+#n3, bins3, patches3 = plt.hist(lst3, bins=41, histtype='step', linewidth=1.2, color='orange', density=True, label='No partonic, but hadronic evolutions')
+n4, bins4, patches4 = plt.hist(lst4, bins=41, histtype='step', linewidth=1.2, color='red', alpha=0.5, density=True, label='Partonic and hadronic evolutions')
+plt.hist(theta_values, bins=bins, weights=sigma_values, histtype='step', linewidth=1.2, color='black', density=True, label='First order theoretical evolution')
+
+plt.xlabel('θ (rad)')
+plt.ylabel('dσ/dθ')
 plt.legend(loc='lower center')
+
 plt.show()

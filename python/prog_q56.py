@@ -18,4 +18,3 @@ plt.xlabel('ΔΦ (rad)')
 plt.ylabel('Normalized distribution')
 
 plt.show()
-
