@@ -1,0 +1,15 @@
+/.env.local   <-- local config
+/.env.*.local   <-- local config
+/var/   <-- cache and logs
+/vendor/   <-- dependencies installed through Composer
+
+# PHPUnit
+/phpunit.xml   <-- local PHPUnit config used for overriding the default phpunit.xml.dist
+.phpunit.result.cache   <-- PHPUnit cache files
+
+# PHPCS
+/phpcs.xml   <-- local PHPCS config used for overriding the default phpcs.xml.dist
+.php_cs.cache   <-- PHPCS cache file
+
+.vscode
+/python/*.txt
